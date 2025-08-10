@@ -82,13 +82,31 @@ gsutil iam ch serviceAccount:$SERVICE_ACCOUNT_EMAIL:objectAdmin $BUCKET
 
 ---
 
-## 9. Testar conexão na segunda instância
+## 9. Exportar todos os bancos da instância origem
+
+> Após criar o bucket, execute o script de exportação para salvar todos os bancos no bucket:
+
+```sh
+./exportar_todos_bancos.sh
+```
+
+## 10. Importar todos os bancos na instância destino
+
+> Após exportar todos os bancos, execute o script de importação na nova instância para restaurar os bancos exportados:
+
+```sh
+./importar_todos_banco.sh
+```
+
+---
+
+## 11. Testar conexão na segunda instância
 
 ```sh
 gcloud sql connect instancia2 --user=postgres
 ```
 
-## 10. Consultar dados migrados
+## 12. Consultar dados migrados
 
 ```sql
 SELECT * FROM clientes;

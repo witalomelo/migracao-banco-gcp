@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Após criar o bucket, execute este script para exportar todos os bancos da instância para o bucket informado.
+# Exemplo:
+#   ./exportar_todos_bancos.sh
+# Quando terminar, execute o script de importação na nova instância para restaurar os bancos exportados.
+# Exemplo:
+#   ./importar_todos_banco.sh
+
 INSTANCE="instancia1"
 BUCKET="gs://bucket-migracao-10746"
 
